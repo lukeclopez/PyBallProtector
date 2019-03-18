@@ -1,4 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.interval import IntervalTrigger
 from win10toast import ToastNotifier
 from datetime import datetime
 
@@ -18,7 +19,7 @@ def notify_for_break():
 
 toaster = ToastNotifier()
 scheduler = BackgroundScheduler()
-scheduler.add_job(notify_for_break, 'interval', seconds=interval)
+scheduler.add_job(notify_for_break, IntervalTrigger(seconds=interval))
 
 
 def enable():
