@@ -4,11 +4,9 @@ from PIL import Image
 
 
 class SysTrayUI:
-    def __init__(self, screenshots_folder=None):
+    def __init__(self):
         # *** Attributes ***
         self.icon_path = "icon.png"
-        self.screenshots_folder = screenshots_folder
-        self.folder_path = "folder_path.p"
 
         # *** Setup Menu ***
         self.menu_items = [
