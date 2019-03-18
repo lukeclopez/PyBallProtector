@@ -1,9 +1,9 @@
-from apscheduler.schedulers.background import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 from win10toast import ToastNotifier
 from datetime import datetime
 import os
 
-interval = (20 * 60)
+interval = 6
 message_title = "Eye Break!"
 message_body = "Look at something 20 feet away for 20 seconds."
 
@@ -14,7 +14,7 @@ def notify_for_break():
 
 
 toaster = ToastNotifier()
-scheduler = BlockingScheduler()
+scheduler = BackgroundScheduler()
 scheduler.add_job(notify_for_break, 'interval', seconds=interval)
 
 
@@ -27,4 +27,4 @@ def enable():
 
 
 def disable():
-    scheduler.shutdown()
+    scheduler.shutdown(wait=False)
