@@ -1,5 +1,7 @@
 ## Python
 .idea/
 __pycache__/
-
-
+pyinstaller.bat
+dist/
+build/
+*.spec

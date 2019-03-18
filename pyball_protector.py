@@ -3,7 +3,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 from win10toast import ToastNotifier
 from datetime import datetime
 
-interval = 6
+interval = (20 * 60)
 duration = 5
 message_title = "Eye Break!"
 message_body = "Look at something 20 feet away for 20 seconds."
