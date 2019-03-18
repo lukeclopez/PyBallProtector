@@ -5,3 +5,7 @@ Modules/libraries used include:
 * [pystray](https://pypi.org/project/pystray/)
 * [win10toast](https://pypi.org/project/win10toast/)
 * [apscheduler](https://apscheduler.readthedocs.io/en/latest/)
+
+## Troubleshooting
+
+If the notifications aren't working, follow the instructions [here](https://www.thewindowsclub.com/notifications-missing-from-action-center).
