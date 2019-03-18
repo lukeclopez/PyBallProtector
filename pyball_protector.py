@@ -9,14 +9,13 @@ def notify_for_break():
     print('Toasted at %s' % datetime.now())
 
 
-if __name__ == '__main__':
-    toaster = ToastNotifier()
-    scheduler = BlockingScheduler()
-    scheduler.add_job(notify_for_break, 'interval', seconds=(20 * 60))
+toaster = ToastNotifier()
+scheduler = BlockingScheduler()
+scheduler.add_job(notify_for_break, 'interval', seconds=(20 * 60))
 
-    print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
+print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
 
-    try:
-        scheduler.start()
-    except (KeyboardInterrupt, SystemExit):
-        scheduler.shutdown()
+try:
+    scheduler.start()
+except (KeyboardInterrupt, SystemExit):
+    scheduler.shutdown()
