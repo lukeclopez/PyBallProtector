@@ -11,6 +11,7 @@ class SysTrayUI:
         # *** Setup Menu ***
         self.menu_items = [
             MenuItem(self.check_status, lambda: pyb.toggle()),
+            MenuItem("Test", lambda: pyb.notify_for_break()),
             MenuItem("Settings", lambda: print("Howdy!")),
             MenuItem("Exit", self.exit),
         ]
