@@ -4,6 +4,7 @@ from win10toast import ToastNotifier
 from datetime import datetime
 
 interval = 6
+duration = 5
 message_title = "Eye Break!"
 message_body = "Look at something 20 feet away for 20 seconds."
 
@@ -13,7 +14,7 @@ class Status:
 
 
 def notify_for_break():
-    toaster.show_toast(message_title, message_body, duration=5, icon_path="icon.ico")
+    toaster.show_toast(message_title, message_body, duration=duration, icon_path="icon.ico")
     print('Toasted at %s' % datetime.now())
 
 
