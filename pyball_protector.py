@@ -1,7 +1,6 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from win10toast import ToastNotifier
 from datetime import datetime
-import os
 
 interval = 6
 message_title = "Eye Break!"
@@ -13,7 +12,7 @@ class Status:
 
 
 def notify_for_break():
-    toaster.show_toast(message_title, message_body, duration=5)
+    toaster.show_toast(message_title, message_body, duration=5, icon_path="icon.ico")
     print('Toasted at %s' % datetime.now())
 
 
