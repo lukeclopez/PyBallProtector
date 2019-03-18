@@ -8,6 +8,10 @@ message_title = "Eye Break!"
 message_body = "Look at something 20 feet away for 20 seconds."
 
 
+class Status:
+    is_running = False
+
+
 def notify_for_break():
     toaster.show_toast(message_title, message_body, duration=5)
     print('Toasted at %s' % datetime.now())
@@ -19,7 +23,7 @@ scheduler.add_job(notify_for_break, 'interval', seconds=interval)
 
 
 def enable():
-    print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
+    Status.is_running = True
     try:
         scheduler.start()
     except (KeyboardInterrupt, SystemExit):
@@ -27,4 +31,12 @@ def enable():
 
 
 def disable():
+    Status.is_running = False
     scheduler.shutdown(wait=False)
+
+
+def toggle():
+    if Status.is_running:
+        disable()
+    else:
+        enable()
